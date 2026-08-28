@@ -27,6 +27,7 @@ final class CameraViewModel: NSObject, ObservableObject { // NSObject for @objc 
         self.protection = protection
         let recording = SegmentedRecordingService(storage: MediaStorageService())
         self.recordingService = recording
+        super.init()
         sessionService.eventPublisher.receive(on: DispatchQueue.main).sink { [weak self] event in
             switch event { case .interrupted(let reason): self?.phase = .interrupted(reason); case .runtimeError(let reason): self?.diagnostics.lastError = reason }
         }.store(in: &events)
