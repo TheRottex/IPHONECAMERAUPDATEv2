@@ -81,7 +81,10 @@ jobs:
           set -e
           if [ "$build_status" -ne 0 ]; then
             echo "::group::Swift and Xcode errors"
-            grep -E '(^|: )error:|error: ' "$BUILD_DIR/xcodebuild.log" || true
+            grep -E 'error:' "$BUILD_DIR/xcodebuild.log" || true
+            echo "::endgroup::"
+            echo "::group::Last 50 lines of build log"
+            tail -n 50 "$BUILD_DIR/xcodebuild.log"
             echo "::endgroup::"
             exit "$build_status"
           fi
