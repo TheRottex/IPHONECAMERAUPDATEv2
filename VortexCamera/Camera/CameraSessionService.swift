@@ -44,8 +44,8 @@ final class CameraSessionService: NSObject, CameraSessionProviding {
 
     override init() {
         super.init()
-        NotificationCenter.default.addObserver(self, selector: #selector(sessionInterrupted(_:)), name: AVCaptureSession.wasInterruptedNotification, object: session)
-        NotificationCenter.default.addObserver(self, selector: #selector(runtimeError(_:)), name: AVCaptureSession.runtimeErrorNotification, object: session)
+        NotificationCenter.default.addObserver(self, selector: #selector(sessionInterrupted(_:)), name: .AVCaptureSessionWasInterrupted, object: session)
+        NotificationCenter.default.addObserver(self, selector: #selector(runtimeError(_:)), name: .AVCaptureSessionRuntimeError, object: session)
     }
 
     deinit { NotificationCenter.default.removeObserver(self) }
