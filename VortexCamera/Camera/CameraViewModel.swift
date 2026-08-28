@@ -3,7 +3,7 @@ import Foundation
 import SwiftUI
 
 @MainActor
-final class CameraViewModel: NSObject, ObservableObject {
+final class CameraViewModel: NSObject, ObservableObject { // NSObject for @objc Timer selector
     @Published private(set) var phase: CameraPhase = .permissionRequired
     @Published private(set) var lenses: [CameraLens] = []
     @Published private(set) var position: CameraPosition = .back
