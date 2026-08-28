@@ -80,11 +80,11 @@ jobs:
           build_status="${PIPESTATUS[0]}"
           set -e
           if [ "$build_status" -ne 0 ]; then
-            echo "::group::Swift and Xcode errors"
-            grep -E 'error:' "$BUILD_DIR/xcodebuild.log" || true
+            echo "::group::Swift compilation errors"
+            grep -E '(error:|fatal error:|Command.*failed with a nonzero exit code)' "$BUILD_DIR/xcodebuild.log" | head -50 || true
             echo "::endgroup::"
-            echo "::group::Last 50 lines of build log"
-            tail -n 50 "$BUILD_DIR/xcodebuild.log"
+            echo "::group::Build log before failure (last 200 lines)"
+            tail -n 200 "$BUILD_DIR/xcodebuild.log"
             echo "::endgroup::"
             exit "$build_status"
           fi
