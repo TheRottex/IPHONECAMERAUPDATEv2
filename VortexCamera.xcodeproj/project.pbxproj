@@ -54,8 +54,8 @@
 		A00000000000000000000221 /* DiagnosticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagnostics/DiagnosticsView.swift; sourceTree = "<group>"; };
 		A00000000000000000000222 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		A00000000000000000000223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Resources/Info.plist; sourceTree = "<group>"; };
-		A00000000000000000000224 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ../Config/Debug.xcconfig; sourceTree = "<group>"; };
-		A00000000000000000000225 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ../Config/Release.xcconfig; sourceTree = "<group>"; };
+		A00000000000000000000224 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config/Debug.xcconfig; sourceTree = "<group>"; };
+		A00000000000000000000225 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config/Release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 /* Begin PBXGroup section */
 		A00000000000000000000300 = {isa = PBXGroup; children = (A00000000000000000000301 /* VortexCamera */, A00000000000000000000302 /* Products */, A00000000000000000000224 /* Debug.xcconfig */, A00000000000000000000225 /* Release.xcconfig */); sourceTree = "<group>"; };
