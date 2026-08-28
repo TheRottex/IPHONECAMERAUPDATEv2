@@ -1,0 +1,90 @@
+name: iOS Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build unsigned iOS app
+    runs-on: macos-14
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Find Xcode project
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Checkout directory: $GITHUB_WORKSPACE"
+          echo "Top-level files:"
+          ls -la "$GITHUB_WORKSPACE"
+
+          mapfile -t projects < <(find "$GITHUB_WORKSPACE" -type d -name VortexCamera.xcodeproj -prune -print | sort)
+          if [ "${#projects[@]}" -eq 0 ]; then
+            echo "::error::VortexCamera.xcodeproj was not found under $GITHUB_WORKSPACE."
+            exit 1
+          fi
+          if [ "${#projects[@]}" -ne 1 ]; then
+            printf '::error::Expected exactly one VortexCamera.xcodeproj, found:\n%s\n' "${projects[*]}"
+            exit 1
+          fi
+
+          project_path="${projects[0]}"
+          echo "Resolved Xcode project: $project_path"
+          echo "PROJECT_PATH=$project_path" >> "$GITHUB_ENV"
+          echo "BUILD_DIR=$GITHUB_WORKSPACE/build" >> "$GITHUB_ENV"
+
+      - name: Inspect Xcode project
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcodebuild -list -project "$PROJECT_PATH" | tee xcode-project-list.txt
+          grep -qE '^[[:space:]]*VortexCamera$' xcode-project-list.txt || {
+            echo "::error::The VortexCamera target was not found in $PROJECT_PATH."
+            exit 1
+          }
+
+      - name: Build for iOS Simulator
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcodebuild \
+            -project "$PROJECT_PATH" \
+            -target VortexCamera \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -derivedDataPath "$BUILD_DIR/DerivedData" \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Package simulator app
+        shell: bash
+        run: |
+          set -euo pipefail
+          app_path="$BUILD_DIR/DerivedData/Build/Products/Debug-iphonesimulator/Camera.app"
+          if [ ! -d "$app_path" ]; then
+            echo "::error::Expected simulator app was not created at $app_path."
+            echo "Available build products:"
+            find "$BUILD_DIR/DerivedData/Build/Products" -maxdepth 3 -print 2>/dev/null || true
+            exit 1
+          fi
+          ditto -c -k --sequesterRsrc --keepParent "$app_path" "$BUILD_DIR/Camera-simulator-app.zip"
+
+      - name: Upload simulator artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Camera-simulator-app
+          path: ${{ github.workspace }}/build/Camera-simulator-app.zip
+          if-no-files-found: error
+          retention-days: 7
