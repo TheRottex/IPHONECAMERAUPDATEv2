@@ -67,6 +67,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          set +e
           xcodebuild \
             -project "$PROJECT_PATH" \
             -scheme VortexCamera \
@@ -74,7 +75,15 @@ jobs:
             -sdk iphonesimulator \
             -derivedDataPath "$BUILD_DIR/DerivedData" \
             CODE_SIGNING_ALLOWED=NO \
-            build
+            build 2>&1 | tee "$BUILD_DIR/xcodebuild.log"
+          build_status="${PIPESTATUS[0]}"
+          set -e
+          if [ "$build_status" -ne 0 ]; then
+            echo "::group::Swift and Xcode errors"
+            grep -E '(^|: )error:|error: ' "$BUILD_DIR/xcodebuild.log" || true
+            echo "::endgroup::"
+            exit "$build_status"
+          fi
 
       - name: Package simulator app
         shell: bash

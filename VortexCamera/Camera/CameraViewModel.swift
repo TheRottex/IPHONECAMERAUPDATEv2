@@ -58,7 +58,20 @@ final class CameraViewModel: ObservableObject {
     }
 
     private func startRecording() {
-        do { try recordingService.start(segmentDuration: selectedSegmentDuration); phase = .recording; elapsed = 0; protection.beginPreventingAutoLock(); protection.checkStorage(); timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in self?.elapsed += 1 } } catch { phase = .failed(error.localizedDescription) }
+        do {
+            try recordingService.start(segmentDuration: selectedSegmentDuration)
+            phase = .recording
+            elapsed = 0
+            protection.beginPreventingAutoLock()
+            protection.checkStorage()
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+                Task { @MainActor in
+                    self?.elapsed += 1
+                }
+            }
+        } catch {
+            phase = .failed(error.localizedDescription)
+        }
     }
 
     private func stopRecording() {

@@ -30,6 +30,7 @@ final class PermissionService: PermissionProviding {
         await PHPhotoLibrary.requestAuthorization(for: .addOnly) == .authorized
     }
 
+    @MainActor
     static func openSettings() {
         guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
         UIApplication.shared.open(url)
