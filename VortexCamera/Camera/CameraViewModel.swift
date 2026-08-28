@@ -64,14 +64,20 @@ final class CameraViewModel: ObservableObject {
             elapsed = 0
             protection.beginPreventingAutoLock()
             protection.checkStorage()
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
-                Task { @MainActor in
-                    self?.elapsed += 1
-                }
-            }
+            timer = Timer.scheduledTimer(
+                timeInterval: 1,
+                target: self,
+                selector: #selector(recordingTimerDidFire),
+                userInfo: nil,
+                repeats: true
+            )
         } catch {
             phase = .failed(error.localizedDescription)
         }
+    }
+
+    @objc private func recordingTimerDidFire() {
+        elapsed += 1
     }
 
     private func stopRecording() {

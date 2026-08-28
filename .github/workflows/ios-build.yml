@@ -67,6 +67,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          mkdir -p "$BUILD_DIR"
           set +e
           xcodebuild \
             -project "$PROJECT_PATH" \
