@@ -48,7 +48,22 @@ struct CameraScreen: View {
     }
 }
 
-private struct RecordingBadge: View { let elapsed: TimeInterval; var body: some View { Label("REC  \(elapsed.formatted(.time(pattern: .minuteSecond)))", systemImage: "record.circle.fill").font(.headline.monospacedDigit()).foregroundStyle(.red).padding(10).background(.black.opacity(0.65), in: Capsule()).accessibilityLabel("Kayıt devam ediyor") } }
+private struct RecordingBadge: View {
+    let elapsed: TimeInterval
+
+    var body: some View {
+        Label("REC  \(formattedElapsed)", systemImage: "record.circle.fill")
+            .font(.headline.monospacedDigit())
+            .foregroundStyle(.red)
+            .padding(10)
+            .background(.black.opacity(0.65), in: Capsule())
+            .accessibilityLabel("Kayıt devam ediyor")
+    }
+
+    private var formattedElapsed: String {
+        String(format: "%02d:%02d", Int(elapsed) / 60, Int(elapsed) % 60)
+    }
+}
 private struct PermissionOverlay: View { let request: () -> Void; var body: some View { MessageOverlay(message: "Kamera erişimi olmadan önizleme veya kayıt yapılamaz.", button: "Kamera İznini Ver", action: request) } }
 private struct MessageOverlay: View { let message: String; var button = "Tekrar Dene"; let action: () -> Void; var body: some View { VStack(spacing: 16) { Image(systemName: "exclamationmark.triangle.fill").font(.largeTitle).foregroundStyle(.yellow); Text(message).multilineTextAlignment(.center); Button(button, action: action).buttonStyle(.borderedProminent) }.padding(28).background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 24)).padding() } }
 private struct TouchLockOverlay: View { @Binding var isLocked: Bool; @State private var progress = 0.0; var body: some View { Color.black.opacity(0.4).ignoresSafeArea().overlay(VStack(spacing: 12) { Image(systemName: "lock.fill").font(.largeTitle); Text("Dokunmatik kilitli"); Text("Açmak için 3 saniye basılı tutun").font(.caption); ProgressView(value: progress).frame(width: 180) }.foregroundStyle(.white).onLongPressGesture(minimumDuration: 3, pressing: { pressing in withAnimation(.linear(duration: 3)) { progress = pressing ? 1 : 0 } }, perform: { isLocked = false; progress = 0 })) } }
