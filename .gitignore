@@ -1,0 +1,15 @@
+# Xcode
+.DS_Store
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+
+# Swift Package Manager
+.build/
+Packages/
+
+# Signing and local configuration
+*.mobileprovision
+*.p12
+*.cer

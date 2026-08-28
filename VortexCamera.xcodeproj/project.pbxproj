@@ -1,0 +1,92 @@
+// !$*UTF8*$!
+{
+ archiveVersion = 1;
+ classes = {};
+ objectVersion = 56;
+ objects = {
+
+/* Begin PBXBuildFile section */
+		A00000000000000000000101 /* VortexCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000201 /* VortexCameraApp.swift */; };
+		A00000000000000000000102 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000202 /* RootView.swift */; };
+		A00000000000000000000103 /* PermissionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000203 /* PermissionState.swift */; };
+		A00000000000000000000104 /* PermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000204 /* PermissionService.swift */; };
+		A00000000000000000000105 /* CameraModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000205 /* CameraModels.swift */; };
+		A00000000000000000000106 /* CameraSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000206 /* CameraSessionService.swift */; };
+		A00000000000000000000107 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000207 /* CameraPreviewView.swift */; };
+		A00000000000000000000108 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000208 /* CameraViewModel.swift */; };
+		A00000000000000000000109 /* CameraContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000209 /* CameraContainerView.swift */; };
+		A00000000000000000000110 /* CameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000210 /* CameraScreen.swift */; };
+		A00000000000000000000111 /* RecordingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000211 /* RecordingModels.swift */; };
+		A00000000000000000000112 /* SegmentedRecordingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000212 /* SegmentedRecordingService.swift */; };
+		A00000000000000000000113 /* RecordingRecoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000213 /* RecordingRecoveryService.swift */; };
+		A00000000000000000000114 /* RecordingProtectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000214 /* RecordingProtectionService.swift */; };
+		A00000000000000000000115 /* RecordingSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000215 /* RecordingSummaryView.swift */; };
+		A00000000000000000000116 /* MediaStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000216 /* MediaStorageService.swift */; };
+		A00000000000000000000117 /* PhotoLibraryWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000217 /* PhotoLibraryWriter.swift */; };
+		A00000000000000000000118 /* SegmentMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000218 /* SegmentMerger.swift */; };
+		A00000000000000000000119 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000219 /* OnboardingView.swift */; };
+		A00000000000000000000120 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000220 /* SettingsView.swift */; };
+		A00000000000000000000121 /* DiagnosticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000221 /* DiagnosticsView.swift */; };
+		A00000000000000000000122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000222 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+/* Begin PBXFileReference section */
+		A00000000000000000000200 /* Camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = Camera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000000000000000000201 /* VortexCameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App/VortexCameraApp.swift; sourceTree = "<group>"; };
+		A00000000000000000000202 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App/RootView.swift; sourceTree = "<group>"; };
+		A00000000000000000000203 /* PermissionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions/PermissionState.swift; sourceTree = "<group>"; };
+		A00000000000000000000204 /* PermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions/PermissionService.swift; sourceTree = "<group>"; };
+		A00000000000000000000205 /* CameraModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera/CameraModels.swift; sourceTree = "<group>"; };
+		A00000000000000000000206 /* CameraSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera/CameraSessionService.swift; sourceTree = "<group>"; };
+		A00000000000000000000207 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera/CameraPreviewView.swift; sourceTree = "<group>"; };
+		A00000000000000000000208 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera/CameraViewModel.swift; sourceTree = "<group>"; };
+		A00000000000000000000209 /* CameraContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera/CameraContainerView.swift; sourceTree = "<group>"; };
+		A00000000000000000000210 /* CameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera/CameraScreen.swift; sourceTree = "<group>"; };
+		A00000000000000000000211 /* RecordingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording/RecordingModels.swift; sourceTree = "<group>"; };
+		A00000000000000000000212 /* SegmentedRecordingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording/SegmentedRecordingService.swift; sourceTree = "<group>"; };
+		A00000000000000000000213 /* RecordingRecoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording/RecordingRecoveryService.swift; sourceTree = "<group>"; };
+		A00000000000000000000214 /* RecordingProtectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording/RecordingProtectionService.swift; sourceTree = "<group>"; };
+		A00000000000000000000215 /* RecordingSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording/RecordingSummaryView.swift; sourceTree = "<group>"; };
+		A00000000000000000000216 /* MediaStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage/MediaStorageService.swift; sourceTree = "<group>"; };
+		A00000000000000000000217 /* PhotoLibraryWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage/PhotoLibraryWriter.swift; sourceTree = "<group>"; };
+		A00000000000000000000218 /* SegmentMerger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage/SegmentMerger.swift; sourceTree = "<group>"; };
+		A00000000000000000000219 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding/OnboardingView.swift; sourceTree = "<group>"; };
+		A00000000000000000000220 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings/SettingsView.swift; sourceTree = "<group>"; };
+		A00000000000000000000221 /* DiagnosticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagnostics/DiagnosticsView.swift; sourceTree = "<group>"; };
+		A00000000000000000000222 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
+		A00000000000000000000223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Resources/Info.plist; sourceTree = "<group>"; };
+		A00000000000000000000224 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ../Config/Debug.xcconfig; sourceTree = "<group>"; };
+		A00000000000000000000225 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ../Config/Release.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+/* Begin PBXGroup section */
+		A00000000000000000000300 = {isa = PBXGroup; children = (A00000000000000000000301 /* VortexCamera */, A00000000000000000000302 /* Products */, A00000000000000000000224 /* Debug.xcconfig */, A00000000000000000000225 /* Release.xcconfig */); sourceTree = "<group>"; };
+		A00000000000000000000301 = {isa = PBXGroup; path = VortexCamera; sourceTree = "<group>"; children = (A00000000000000000000201,A00000000000000000000202,A00000000000000000000203,A00000000000000000000204,A00000000000000000000205,A00000000000000000000206,A00000000000000000000207,A00000000000000000000208,A00000000000000000000209,A00000000000000000000210,A00000000000000000000211,A00000000000000000000212,A00000000000000000000213,A00000000000000000000214,A00000000000000000000215,A00000000000000000000216,A00000000000000000000217,A00000000000000000000218,A00000000000000000000219,A00000000000000000000220,A00000000000000000000221,A00000000000000000000222,A00000000000000000000223); };
+		A00000000000000000000302 = {isa = PBXGroup; children = (A00000000000000000000200); name = Products; sourceTree = "<group>"; };
+/* End PBXGroup section */
+/* Begin PBXNativeTarget section */
+		A00000000000000000000400 = {isa = PBXNativeTarget; buildConfigurationList = A00000000000000000000500; buildPhases = (A00000000000000000000600,A00000000000000000000601,A00000000000000000000602); buildRules = (); dependencies = (); name = VortexCamera; productName = "VORTEX CAMERA"; productReference = A00000000000000000000200; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+/* Begin PBXProject section */
+		A00000000000000000000700 = {isa = PBXProject; attributes = { LastUpgradeCheck = 1500; TargetAttributes = { A00000000000000000000400 = { CreatedOnToolsVersion = 15.0; }; }; }; buildConfigurationList = A00000000000000000000800; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = A00000000000000000000300; productRefGroup = A00000000000000000000302; projectDirPath = ""; projectRoot = ""; targets = (A00000000000000000000400); };
+/* End PBXProject section */
+/* Begin PBXResourcesBuildPhase section */
+		A00000000000000000000602 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000122); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+/* Begin PBXSourcesBuildPhase section */
+		A00000000000000000000601 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000101,A00000000000000000000102,A00000000000000000000103,A00000000000000000000104,A00000000000000000000105,A00000000000000000000106,A00000000000000000000107,A00000000000000000000108,A00000000000000000000109,A00000000000000000000110,A00000000000000000000111,A00000000000000000000112,A00000000000000000000113,A00000000000000000000114,A00000000000000000000115,A00000000000000000000116,A00000000000000000000117,A00000000000000000000118,A00000000000000000000119,A00000000000000000000120,A00000000000000000000121); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+/* Begin PBXFrameworksBuildPhase section */
+		A00000000000000000000600 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+/* Begin XCBuildConfiguration section */
+		A00000000000000000000900 = {isa = XCBuildConfiguration; baseConfigurationReference = A00000000000000000000224; buildSettings = { INFOPLIST_FILE = VortexCamera/Resources/Info.plist; PRODUCT_BUNDLE_IDENTIFIER = com.vortex.camera; SWIFT_STRICT_CONCURRENCY = complete; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+		A00000000000000000000901 = {isa = XCBuildConfiguration; baseConfigurationReference = A00000000000000000000225; buildSettings = { INFOPLIST_FILE = VortexCamera/Resources/Info.plist; PRODUCT_BUNDLE_IDENTIFIER = com.vortex.camera; SWIFT_STRICT_CONCURRENCY = complete; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+		A00000000000000000000902 = {isa = XCBuildConfiguration; buildSettings = { }; name = Debug; };
+		A00000000000000000000903 = {isa = XCBuildConfiguration; buildSettings = { }; name = Release; };
+/* End XCBuildConfiguration section */
+/* Begin XCConfigurationList section */
+		A00000000000000000000500 = {isa = XCConfigurationList; buildConfigurations = (A00000000000000000000900,A00000000000000000000901); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A00000000000000000000800 = {isa = XCConfigurationList; buildConfigurations = (A00000000000000000000902,A00000000000000000000903); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+ };
+ rootObject = A00000000000000000000700;
+}
